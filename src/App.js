@@ -10,6 +10,7 @@ const CheckboxGroup = Checkbox.Group;
 
 const plainOptions = ['Precipitaciones', 'Temperatura'];
 const defaultCheckedList = ['Precipitaciones', 'Temperatura'];
+import Esp32Provider from './Provider/ESP32/provider';
 
 
 function App() {
@@ -46,7 +47,10 @@ function App() {
             padding: '25px'
           }}>
           <h1>Proyecto de Nayar-Facsa</h1>
-          <Beep />
+          <Esp32Provider>
+            <Beep />
+          </Esp32Provider>
+
           {info()}
           <CheckboxGroup options={plainOptions} value={checkedList} onChange={onChange} />
 
