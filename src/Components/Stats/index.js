@@ -1,4 +1,4 @@
-
+import './style.css'
 
 import { ColumnGraphics } from './ColumnGraphics'; //Componente grafico personalizado
 import { LineGraphics } from './LineGraphics'; //Componente grafico personalizado
