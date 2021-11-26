@@ -51,30 +51,6 @@ function App() {
 
         </Col>
       </Row>
-      { }
-      <Row justify="center">
-        <Col
-          span={10}
-
-          style={{
-            backgroundColor: '#fff',
-            marginTop: '50px',
-            padding: '25px'
-          }}>
-
-          <LineGraphics loading={false} title={'Precipitaciones'} datos={sensores} x={'Dia'} y={'Temp'} />
-        </Col>
-        <Col
-          span={10}
-
-          style={{
-            backgroundColor: '#fff',
-            marginTop: '50px',
-            padding: '25px'
-          }}>
-          <ColumnGraphics loading={false} title={'Temperatura'} datos={sensores} x={'Dia'} y={'Temp'} />
-        </Col>
-      </Row>
 
     </div>
   );
