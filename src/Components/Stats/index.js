@@ -23,20 +23,34 @@ export default function Stats() {
             <Row justify="center">
                 <Col>
                     <LineGraphics loading={false} title={'Precipitaciones'} datos={sensores} x={'Dia'} y={'Temp'} />
+                    <div className="download">
+                        <Button
+                            shape="circle" icon={<CloudDownloadOutlined />}
+                            href={`data:text/json;charset=utf-8,${encodeURIComponent(
+                                JSON.stringify(sensores)
+                            )}`}
+                            download={"Precipitaciones_" + newdate + ".json"}
+                        >
+                        </Button>
+                    </div>
                 </Col>
 
                 <Col>
                     <ColumnGraphics loading={false} title={'Temperatura'} datos={sensores} x={'Dia'} y={'Temp'} />
+                    <div className="download">
+
+                        <Button
+                            shape="circle" icon={<CloudDownloadOutlined />}
+                            href={`data:text/json;charset=utf-8,${encodeURIComponent(
+                                JSON.stringify(sensores)
+                            )}`}
+                            download={"Temperatura_" + newdate + ".json"}
+                        >
+                        </Button>
+                    </div>
                 </Col>
             </Row>
-            <Button
-                shape="circle" icon={<CloudDownloadOutlined />}
-                href={`data:text/json;charset=utf-8,${encodeURIComponent(
-                    JSON.stringify(sensores)
-                )}`}
-                download={"precipitaciones_" + newdate + ".json"}
-            >
-            </Button>
+
         </div>
     );
 }

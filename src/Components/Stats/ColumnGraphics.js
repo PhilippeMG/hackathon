@@ -1,5 +1,8 @@
 import React from 'react';
-import {Column } from '@ant-design/charts';
+import { Column } from '@ant-design/charts';
+
+import { Typography } from 'antd';
+const { Title } = Typography;
 
 export const ColumnGraphics = params => {
   const data = params.datos;
@@ -27,10 +30,10 @@ export const ColumnGraphics = params => {
     }
   };
 
-  
+
   return (
     <div>
-      <h3>{params.title}</h3>      
+      <Title level={3}>{params.title}</Title>
       <Column loading={params.loading} {...config} />
     </div>
   );

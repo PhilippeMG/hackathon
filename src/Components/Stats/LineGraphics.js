@@ -1,7 +1,8 @@
 import React from 'react';
 //import 'antd/dist/antd.css';
-import {Line } from '@ant-design/charts';
-
+import { Line } from '@ant-design/charts';
+import { Typography } from 'antd';
+const { Title } = Typography;
 export const LineGraphics = params => {
   const data = params.datos;
 
@@ -28,10 +29,10 @@ export const LineGraphics = params => {
     }
   };
 
-  
+
   return (
     <div>
-      <h3>{params.title}</h3>      
+      <Title level={3}>{params.title}</Title>
       <Line loading={params.loading} {...config} />
     </div>
   );
