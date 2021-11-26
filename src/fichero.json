@@ -1,0 +1,47 @@
+[
+    {
+      "Sensor": "Temperatura Motor",
+      "Dia" : "0.0",
+      "Temp": 22
+    },
+    {
+        "Sensor": "Temperatura Motor",
+        "Dia" : "1.0",
+        "Temp": 23
+      },
+      {
+        "Sensor": "Temperatura Motor",
+        "Dia" : "2.0",
+        "Temp": 24
+      },
+      {
+        "Sensor": "Temperatura Motor",
+        "Dia" : "2.5",
+        "Temp": 20
+      },
+      {
+        "Sensor": "Temperatura Motor",
+        "Dia" : "3.0",
+        "Temp": 25
+      },
+      {
+        "Sensor": "Temperatura Motor",      
+        "Dia" : "4.0",
+        "Temp": 26
+      },
+      {
+        "Sensor": "Temperatura Motor",
+        "Dia" : "6.0",
+        "Temp": 29
+      },
+      {
+        "Sensor": "Temperatura Motor",
+        "Dia" : "7.0",
+        "Temp": 29
+      },
+      {
+        "Sensor": "Temperatura Motor",
+        "Dia" : "8.0",
+        "Temp": 29
+      }
+  ]
