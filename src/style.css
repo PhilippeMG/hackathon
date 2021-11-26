@@ -4,3 +4,7 @@
     margin: 0px;
    
 }
+
+.ant-col ant-col-24{
+    background-color: transparent;
+}
