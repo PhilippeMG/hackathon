@@ -1,0 +1,19 @@
+.ant-row{
+    flex-flow: column;
+}
+.ant-col{
+    padding: 10px 3%;
+}
+.ant-col h3{
+    margin-bottom: 30px;
+}
+
+@media (min-width:900px){
+    .ant-row{
+        flex-flow: row;
+    }
+    .ant-col{
+        width: 100%;
+        
+    }
+}
