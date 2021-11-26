@@ -8,8 +8,6 @@ pubsub.subscribe("conin.evt.key", function (msg) {
     lastkey = msg.value.c
 })
 
-
-
 setInterval(function () {
     // Rotate banner
     banner = banner.slice(1) + banner.slice(0, 1)

@@ -1,0 +1,2 @@
+curl -X POST -H "Authorization: Bearer 75db66b2ad2721a780d7beb747bc1e38ed79a2ed" -d "{"to":"ui.cmd.beep", "data": {"on":1000} }" https://0f395f0895fa.dev.weblet.io/devices/cmd
+
