@@ -21,7 +21,7 @@ const { TabPane } = Tabs;
 const { Title } = Typography;
 function App() {
 
-  // const { forecast } = useContext(WeatherProvider);
+  // const { forecast, } = useContext(WeatherProvider);
   function callback(key) {
     console.log(key);
   }
@@ -36,9 +36,14 @@ function App() {
             <Title>
               Hackaton-FACSA
             </Title>
-
           </div>
+
           <Beep />
+
+          <div className="tabs-graficas">
+            <ForecastTab />
+          </div>
+
           <Row justify="center">
             <Col
               span={24}
@@ -47,23 +52,12 @@ function App() {
                 marginTop: '50px',
                 padding: '25px'
               }}>
-              {/* forecast.map((data) => console.log(data) ) */}
+
               <EstadoRele />
               <Stats />
             </Col>
           </Row>
 
-          <Tabs defaultActiveKey="1" onChange={callback}>
-            <TabPane tab="Tab 1" key="1">
-              <ForecastTab />
-            </TabPane>
-            <TabPane tab="Tab 2" key="2">
-              Content of Tab Pane 2
-            </TabPane>
-            <TabPane tab="Tab 3" key="3">
-              Content of Tab Pane 3
-            </TabPane>
-          </Tabs>
 
         </WeatherProvider>
       </Esp32Provider>

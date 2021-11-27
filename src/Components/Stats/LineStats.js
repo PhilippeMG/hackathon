@@ -5,22 +5,9 @@ import { Line } from '@ant-design/charts';
 import { uniq, findIndex } from '@antv/util';
 
 export const LineStats = params => {
-    const [datga, setData] = useState([]);
 
-    useEffect(() => {
-        asyncFetch();
-        console.log("DATOS: ", datga);
 
-    }, []);
 
-    const asyncFetch = () => {
-        fetch('https://gw.alipayobjects.com/os/bmw-prod/55424a73-7cb8-4f79-b60d-3ab627ac5698.json')
-            .then((response) => response.json())
-            .then((json) => setData(json))
-            .catch((error) => {
-                console.log('fetch data failed', error);
-            });
-    };
 
     const COLOR_PLATE_10 = [
         '#5B8FF9',

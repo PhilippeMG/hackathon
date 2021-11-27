@@ -22,11 +22,14 @@ export default function WeatherProvider({ children }) {
             // Graficas
             let newTuple = tupleForecast
             if (data.rain) {
-                newTuple.push({ "fecha": data.dt_txt, "data": data.pop, "category": "Precipitaciones" })
-                newTuple.push({ "fecha": data.dt_txt, "data": data.rain['3h'], "category": "Volumen lluvia" })
+                newTuple.push({ "fecha": data.dt_txt, "data": data.pop, "data2": data.rain['3h'] })
+                //newTuple.push({ "fecha": data.dt_txt, "data": data.rain['3h'], "category": "Volumen lluvia" })
             }
             else {
-                newTuple.push({ "fecha": data.dt_txt, "data": data.pop, "category": "Precipitaciones" })
+                // newTuple.push({ "fecha": data.dt_txt, "data": data.pop, "category": "Precipitaciones" })
+                //newTuple.push({ "fecha": data.dt_txt, "data": 0, "category": "Volumen lluvia" })
+                newTuple.push({ "fecha": data.dt_txt, "data": data.pop, "data2": 0 })
+
             }
 
             tupleForecast = newTuple
@@ -58,7 +61,7 @@ export default function WeatherProvider({ children }) {
 
             if (actualDay == currentDay) {
 
-                dayForecast.push({ "fecha": data.fecha, "data": data.data, "category": data.category })
+                dayForecast.push({ "Fecha": data.fecha, "Hora": data.fecha.split(' ')[1], "Probabilidad": data.data, "Volumen": data.data2 })
 
 
             } else {
@@ -67,7 +70,7 @@ export default function WeatherProvider({ children }) {
                 currentDay = actualDay;
 
 
-                dayForecast.push({ "fecha": data.fecha, "data": data.data, "category": data.category })
+                dayForecast.push({ "Fecha": data.fecha, "Hora": data.fecha.split(' ')[1], "Probabilidad": data.data, "Volumen": data.data2 })
 
                 cont++
             }
