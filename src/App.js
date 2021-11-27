@@ -1,4 +1,6 @@
 import 'antd/dist/antd.css'
+import './style.css'
+
 import { Row, Col } from 'antd';
 import Beep from "./Components/Beep";
 import Stats from "./Components/Stats";
@@ -7,6 +9,8 @@ import WeatherProvider from './Provider/Weather/provider';
 import { useContext } from 'react';
 import WeatherContext from './Provider/Weather';
 
+import { Typography } from 'antd';
+const { Title } = Typography;
 function App() {
   return (
     <div className="container">
