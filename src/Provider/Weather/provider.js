@@ -1,3 +1,4 @@
+import { tuple } from 'antd/lib/_util/type';
 import axios from 'axios';
 import React, { useState } from 'react';
 import WeatherContext from "./index";
@@ -6,19 +7,32 @@ const openWeather = 'http://api.openweathermap.org/data/2.5'
 const apiKey = '939870073591d720503a9d8aebd34eb3'
 export default function WeatherProvider({ children }) {
 
+    const [forecast, setForecast] = useState([]);
 
-    const [forecast, setForecast] = useState(null);
 
     const getCityForecast = async (city) => {
-        // send HTTP request
 
+        let tupleForecast = []
+        // send HTTP request
         const response = await axios.get(`${openWeather}/forecast?q=${city}&appid=${apiKey}&units=metric`);
-        console.log("Respuesta OPENWEATHER:", response.data)
+        console.log("Respuesta OPENWEATHER:", response.data.list)
+        response.data.list.map((data) => {
+            // console.log(data.dt_txt, data.pop)
+            let newTuple = tupleForecast
+            if (data.rain) {
+                newTuple.push({ "fecha": data.dt_txt, "preciptation": data.pop, "rain": data.rain['3h'] })
+            }
+            else {
+                newTuple.push({ "fecha": data.dt_txt, "preciptation": data.pop, "rain": 0 })
+            }
+            tupleForecast = newTuple
+        })
 
         // validar respuesta
 
         // save response to variablex
-        setForecast(response.data)
+        console.log(tupleForecast)
+        setForecast(tupleForecast)
     }
 
     return (

@@ -6,10 +6,12 @@ import { Button, Row, Col } from 'antd';
 import sensores from "./fichero.json"; //Lectura del fichero
 
 import { CloudDownloadOutlined } from '@ant-design/icons';
+import { useContext } from 'react';
+import WeatherContext from '../../Provider/Weather';
 
 
 export default function Stats() {
-
+    const { forecast } = useContext(WeatherContext)
 
     var dateObj = new Date();
     var month = dateObj.getUTCMonth() + 1; //months from 1-12
@@ -22,7 +24,7 @@ export default function Stats() {
 
             <Row justify="center">
                 <Col>
-                    <LineGraphics loading={false} title={'Precipitaciones'} datos={sensores} x={'Dia'} y={'Temp'} />
+                    <LineGraphics loading={false} title={'Precipitaciones'} datos={forecast} x={'fecha'} y={'preciptation'} />
                     <div className="download">
                         <Button
                             shape="circle" icon={<CloudDownloadOutlined />}
@@ -36,7 +38,7 @@ export default function Stats() {
                 </Col>
 
                 <Col>
-                    <ColumnGraphics loading={false} title={'Temperatura'} datos={sensores} x={'Dia'} y={'Temp'} />
+                    <ColumnGraphics loading={false} title={'Volumen de lluvia'} datos={forecast} x={'fecha'} y={'rain'} />
                     <div className="download">
 
                         <Button
@@ -44,7 +46,7 @@ export default function Stats() {
                             href={`data:text/json;charset=utf-8,${encodeURIComponent(
                                 JSON.stringify(sensores)
                             )}`}
-                            download={"Temperatura_" + newdate + ".json"}
+                            download={"Volumen_de_lluvia_" + newdate + ".json"}
                         >
                         </Button>
                     </div>
