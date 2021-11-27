@@ -16,8 +16,14 @@ function App() {
     <div className="container">
       <Esp32Provider>
         <WeatherProvider>
-          <Beep />
 
+          <div className="title">
+            <Title>
+              Hackaton-FACSA
+            </Title>
+
+          </div>
+          <Beep />
           <Row justify="center">
             <Col
               span={24}

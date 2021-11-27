@@ -3,6 +3,7 @@
 }
 .ant-col{
     padding: 10px 3%;
+    margin: 0 !important;
 }
 .ant-col h3{
     margin-bottom: 30px;

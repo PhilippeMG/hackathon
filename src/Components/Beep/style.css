@@ -1,0 +1,14 @@
+.alertButton{
+    border: 12px 0px;
+
+}
+
+
+.main-container{
+    margin: 1%;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    width: 358px;   
+     justify-content: space-between;
+}
