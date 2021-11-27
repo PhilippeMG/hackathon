@@ -2,6 +2,7 @@ import './style.css'
 
 import { ColumnGraphics } from './ColumnGraphics'; //Componente grafico personalizado
 import { LineGraphics } from './LineGraphics'; //Componente grafico personalizado
+import { LineStats } from './LineStats';
 import { Button, Row, Col } from 'antd';
 import sensores from "./fichero.json"; //Lectura del fichero
 
@@ -24,7 +25,7 @@ export default function Stats() {
 
             <Row justify="center">
                 <Col>
-                    <LineGraphics loading={false} title={'Precipitaciones'} datos={forecast} x={'fecha'} y={'preciptation'} />
+                    <LineGraphics loading={false} title={'Precipitaciones'} datos={forecast} x={'fecha'} y={'data'} />
                     <div className="download">
                         <Button
                             shape="circle" icon={<CloudDownloadOutlined />}
@@ -38,7 +39,8 @@ export default function Stats() {
                 </Col>
 
                 <Col>
-                    <ColumnGraphics loading={false} title={'Volumen de lluvia'} datos={forecast} x={'fecha'} y={'rain'} />
+                    <LineStats datos={forecast} x={'fecha'} y={'data'} />
+                    <ColumnGraphics loading={false} title={'Volumen de lluvia'} datos={forecast} x={'fecha'} y={'data'} />
                     <div className="download">
 
                         <Button

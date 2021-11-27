@@ -20,10 +20,12 @@ export default function WeatherProvider({ children }) {
             // console.log(data.dt_txt, data.pop)
             let newTuple = tupleForecast
             if (data.rain) {
-                newTuple.push({ "fecha": data.dt_txt, "preciptation": data.pop, "rain": data.rain['3h'] })
+                newTuple.push({ "fecha": data.dt_txt, "data": data.pop, "category": "Precipitaciones" })
+                newTuple.push({ "fecha": data.dt_txt, "data": data.rain['3h'], "category": "Volumen lluvia" })
+
             }
             else {
-                newTuple.push({ "fecha": data.dt_txt, "preciptation": data.pop, "rain": 0 })
+                newTuple.push({ "fecha": data.dt_txt, "data": data.pop, "category": "Precipitaciones" })
             }
             tupleForecast = newTuple
         })

@@ -6,7 +6,7 @@ const { Title } = Typography;
 
 export const ColumnGraphics = params => {
   const data = params.datos;
-
+  console.log(data)
 
   const config = {
     data,

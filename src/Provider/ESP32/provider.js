@@ -24,7 +24,7 @@ export default function Esp32Provider({ children }) {
         const response = await axios.post(
             url,
             {
-                "to": "io.cmd.put_out", "data": { "set": 2048 }
+                "to": "io.cmd.put_out", "data": { "set": 4095 }
             },
             {
                 headers: {
@@ -39,7 +39,7 @@ export default function Esp32Provider({ children }) {
         const response = await axios.post(
             url,
             {
-                "to": "io.cmd.put_out", "data": { "clr": 2048 }
+                "to": "io.cmd.put_out", "data": { "clr": 4095 }
             },
             {
                 headers: {
