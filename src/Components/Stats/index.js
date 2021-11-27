@@ -25,7 +25,7 @@ export default function Stats() {
 
             <Row justify="center">
                 <Col>
-                    <LineGraphics loading={false} title={'Precipitaciones'} datos={forecast} x={'fecha'} y={'data'} />
+                    <LineStats datos={forecast} x={'fecha'} y={'data'} />
                     <div className="download">
                         <Button
                             shape="circle" icon={<CloudDownloadOutlined />}
@@ -33,22 +33,6 @@ export default function Stats() {
                                 JSON.stringify(sensores)
                             )}`}
                             download={"Precipitaciones_" + newdate + ".json"}
-                        >
-                        </Button>
-                    </div>
-                </Col>
-
-                <Col>
-                    <LineStats datos={forecast} x={'fecha'} y={'data'} />
-                    <ColumnGraphics loading={false} title={'Volumen de lluvia'} datos={forecast} x={'fecha'} y={'data'} />
-                    <div className="download">
-
-                        <Button
-                            shape="circle" icon={<CloudDownloadOutlined />}
-                            href={`data:text/json;charset=utf-8,${encodeURIComponent(
-                                JSON.stringify(sensores)
-                            )}`}
-                            download={"Volumen_de_lluvia_" + newdate + ".json"}
                         >
                         </Button>
                     </div>
