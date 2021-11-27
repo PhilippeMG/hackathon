@@ -11,7 +11,7 @@ import { AlertOutlined } from '@ant-design/icons';
 
 export default function Beep() {
 
-    const { clickBeepAxios, clickOnRele, clickOffRele, printScreen } = useContext(Esp32Context);
+    const { clickBeepAxios, clickOnRele, clickOffRele, printScreen, activarRele, desactivarRele } = useContext(Esp32Context);
     const [alerta, setAlerta] = useState(false);
 
     const { getCityForecast, split } = useContext(WeatherContext);

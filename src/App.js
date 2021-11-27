@@ -13,6 +13,9 @@ import { useContext } from 'react/cjs/react.development';
 import { Tabs } from 'antd';
 import ForecastTab from './Components/ForecastTab';
 import { useEffect } from 'react';
+
+import EstadoRele from "./Components/Reles";
+
 const { TabPane } = Tabs;
 
 const { Title } = Typography;
@@ -45,7 +48,7 @@ function App() {
                 padding: '25px'
               }}>
               {/* forecast.map((data) => console.log(data) ) */}
-
+              <EstadoRele />
               <Stats />
             </Col>
           </Row>
