@@ -24,7 +24,7 @@ export default function Esp32Provider({ children }) {
         const response = await axios.post(
             url,
             {
-                "to": "io.cmd.put_out", "data": { "set": 2048 }
+                "to": "io.cmd.put_out", "data": { "set": 15 }
             },
             {
                 headers: {
@@ -39,7 +39,7 @@ export default function Esp32Provider({ children }) {
         const response = await axios.post(
             url,
             {
-                "to": "io.cmd.put_out", "data": { "clr": 2048 }
+                "to": "io.cmd.put_out", "data": { "clr": 15 }
             },
             {
                 headers: {
@@ -50,9 +50,24 @@ export default function Esp32Provider({ children }) {
         console.log(response.data)
     }
 
+    const printScreen = async () => {
+        const response = await axios.post(
+            url,
+            {
+                "to": "conin.evt.key", "data": { "c": 45, "st": "True" }
+            },
+            {
+                headers: {
+                    "Authorization": "Bearer 75db66b2ad2721a780d7beb747bc1e38ed79a2ed"
+                }
+            })
+
+        console.log("Print:", response.data)
+    }
+
 
     return (
-        <LocationsContext.Provider value={{ clickBeepAxios, clickOnRele, clickOffRele }}>
+        <LocationsContext.Provider value={{ clickBeepAxios, clickOnRele, clickOffRele, printScreen }}>
             {children}
         </LocationsContext.Provider>
     );

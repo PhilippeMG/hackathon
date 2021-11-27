@@ -11,11 +11,11 @@ import { AlertOutlined } from '@ant-design/icons';
 
 export default function Beep() {
 
-    const { clickBeepAxios, clickOnRele, clickOffRele } = useContext(Esp32Context);
+    const { clickBeepAxios, clickOnRele, clickOffRele, printScreen } = useContext(Esp32Context);
     const { forecast, getCityForecast } = useContext(WeatherContext);
     const [alerta, setAlerta] = useState(false);
     useEffect(() => {
-        getCityForecast('Castellon');
+        getCityForecast('Toledo');
     }, [])
 
     function activarAlerta() {
@@ -33,6 +33,7 @@ export default function Beep() {
                 <Button type="primary" onClick={clickBeepAxios}>Pita Axios</Button>
                 <Button type="primary" onClick={clickOnRele}>PINES ON</Button>
                 <Button type="primary" onClick={clickOffRele}>PINES OFF</Button>
+                <Button type="primary" onClick={printScreen}>Imprimir</Button>
                 {/* <Button type="primary" onClick={getCityForecast("Valencia")}>FORECAST</Button> */}
             </div>
             {alerta && <ConfirmationAlert setAlerta={setAlerta} />}
