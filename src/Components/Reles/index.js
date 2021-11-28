@@ -1,4 +1,4 @@
-
+import './style.css'
 import { Button } from 'antd';
 import { useContext, useEffect, useState } from 'react';
 import Esp32Context from '../../Provider/ESP32';
@@ -10,43 +10,47 @@ export default function EstadoRele() {
 
     const { clickBeepAxios, clickOnRele, clickOffRele, printScreen, reles } = useContext(Esp32Context);
     const { forecast, getCityForecast } = useContext(WeatherContext);
-  
+
 
 
     return (
-        <>
-          {reles["1"] == 1 ? (
-                <Button type="primary"  shape="circle" size="large"><BulbOutlined /></Button>
-            ):(
-                <Button type="primary" disabled  shape="circle" size="large"><BulbOutlined /></Button>
 
-            )
-            }
-
-            {reles["2"] == 1 ? (
-                <Button type="primary"  shape="circle" size="large"><BulbOutlined /></Button>
-            ):(
-                <Button type="primary" disabled  shape="circle" size="large"><BulbOutlined /></Button>
-
-            )
-            }
-            {reles["3"] == 1 ? (
-                <Button type="primary" shape="circle" size="large" ><BulbOutlined /></Button>
-            ):(
-                <Button type="primary" disabled  shape="circle" size="large"><BulbOutlined /></Button>
-
-            )
-            }
-            {reles["4"] == 1 ? (
-                <Button type="primary"  shape="circle" size="large"><BulbOutlined /></Button>
-            ):(
-                <Button type="primary" disabled  shape="circle" size="large"><BulbOutlined /></Button>
-
-            )
-            }
+        <div className='panel-control'>
+            <div className="botoneria">
 
 
-        </>
+                {reles["1"] == 1 ? (
+                    <Button type="primary" shape="circle" size="large"><BulbOutlined /></Button>
+                ) : (
+                    <Button type="primary" disabled shape="circle" size="large"><BulbOutlined /></Button>
+
+                )
+                }
+
+                {reles["2"] == 1 ? (
+                    <Button type="primary" shape="circle" size="large"><BulbOutlined /></Button>
+                ) : (
+                    <Button type="primary" disabled shape="circle" size="large"><BulbOutlined /></Button>
+
+                )
+                }
+                {reles["3"] == 1 ? (
+                    <Button type="primary" shape="circle" size="large" ><BulbOutlined /></Button>
+                ) : (
+                    <Button type="primary" disabled shape="circle" size="large"><BulbOutlined /></Button>
+
+                )
+                }
+                {reles["4"] == 1 ? (
+                    <Button type="primary" shape="circle" size="large"><BulbOutlined /></Button>
+                ) : (
+                    <Button type="primary" disabled shape="circle" size="large"><BulbOutlined /></Button>
+
+                )
+                }
+
+            </div>
+        </div>
     );
 
 }

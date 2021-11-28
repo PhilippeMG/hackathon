@@ -22,13 +22,13 @@ export default function WeatherProvider({ children }) {
             // Graficas
             let newTuple = tupleForecast
             if (data.rain) {
-                newTuple.push({ "fecha": data.dt_txt, "data": data.pop, "data2": data.rain['3h'] })
+                newTuple.push({ "Fecha": data.dt_txt, "data": data.pop, "data2": data.rain['3h'] })
                 //newTuple.push({ "fecha": data.dt_txt, "data": data.rain['3h'], "category": "Volumen lluvia" })
             }
             else {
                 // newTuple.push({ "fecha": data.dt_txt, "data": data.pop, "category": "Precipitaciones" })
                 //newTuple.push({ "fecha": data.dt_txt, "data": 0, "category": "Volumen lluvia" })
-                newTuple.push({ "fecha": data.dt_txt, "data": data.pop, "data2": 0 })
+                newTuple.push({ "Fecha": data.dt_txt, "data": data.pop, "data2": 0 })
 
             }
 
@@ -55,13 +55,13 @@ export default function WeatherProvider({ children }) {
         let cont = 0
 
         forecast.map((data) => {
-            let actualDay = new Date(data.fecha.split(' ')[0])
+            let actualDay = new Date(data.Fecha.split(' ')[0])
             actualDay = actualDay.getDay()
 
 
             if (actualDay == currentDay) {
 
-                dayForecast.push({ "Fecha": data.fecha, "Hora": data.fecha.split(' ')[1], "Probabilidad": data.data, "Volumen": data.data2 })
+                dayForecast.push({ "Fecha": data.Fecha, "Hora": data.Fecha.split(' ')[1], "Probabilidad": data.data, "Volumen": data.data2 })
 
 
             } else {
@@ -70,7 +70,7 @@ export default function WeatherProvider({ children }) {
                 currentDay = actualDay;
 
 
-                dayForecast.push({ "Fecha": data.fecha, "Hora": data.fecha.split(' ')[1], "Probabilidad": data.data, "Volumen": data.data2 })
+                dayForecast.push({ "Fecha": data.Fecha, "Hora": data.Fecha.split(' ')[1], "Probabilidad": data.data, "Volumen": data.data2 })
 
                 cont++
             }

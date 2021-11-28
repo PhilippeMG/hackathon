@@ -17,7 +17,7 @@ export default function Beep() {
     const { getCityForecast, split } = useContext(WeatherContext);
 
     useEffect(async () => {
-        getCityForecast("Londres");
+        getCityForecast("Castellon");
     }, [])
 
 
@@ -28,7 +28,7 @@ export default function Beep() {
 
     return (
         <>
-            <div className="main-container">
+            {/* <div className="main-container">
                 <div className="alertButton">
                     <Button shape="circle" size="large" danger onClick={activarAlerta}><AlertOutlined /></Button>
                 </div>
@@ -38,7 +38,7 @@ export default function Beep() {
                 <Button type="primary" onClick={clickOffRele}>PINES OFF</Button>
 
             </div>
-            {alerta && <ConfirmationAlert setAlerta={setAlerta} />}
+            {alerta && <ConfirmationAlert setAlerta={setAlerta} />} */}
         </>
     );
 

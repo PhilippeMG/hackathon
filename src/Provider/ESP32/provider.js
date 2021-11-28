@@ -21,17 +21,17 @@ export default function Esp32Provider({ children }) {
     function convertToBinary1(number) {
         let num = number;
         let binary = (num % 2).toString();
-        console.log(binary)
+        //console.log(binary)
         for (; num > 1;) {
             num = parseInt(num / 2);
             binary = (num % 2) + (binary);
         }
-        console.log("number: ", number, " binary: ", binary);
+        // console.log("number: ", number, " binary: ", binary);
         let dato = binary + "";
         let valor = reverse(dato).split("")
         setRele({ "1": valor[0], "2": valor[1], "3": valor[2], "4": valor[3] })
 
-        console.log("reles: ", reles)
+        // console.log("reles: ", reles)
 
 
     }
@@ -73,8 +73,8 @@ export default function Esp32Provider({ children }) {
         //convertToBinary1(response.data.result.data)
         // convertData();
     }
-    const activarRele = () => {
-        let n = 2
+    const activarRele = (n) => {
+        // let n = 2
 
         switch (n) {
             case 1:
@@ -90,25 +90,25 @@ export default function Esp32Provider({ children }) {
                 setRele({ "1": reles["1"], "2": reles["2"], "3": reles["3"], "4": 1 });
                 break;
         }
-        clickOnRele();
+        // clickOnRele();
     }
-    const desactivarRele = () => {
-        let n = 2
+    const desactivarRele = (n) => {
+        // let n = 2
         switch (n) {
             case 1:
-                setRele({ "1": 1, "2": reles["2"], "3": reles["3"], "4": reles["4"] });
+                setRele({ "1": 0, "2": reles["2"], "3": reles["3"], "4": reles["4"] });
                 break;
             case 2:
-                setRele({ "1": reles["1"], "2": 1, "3": reles["3"], "4": reles["4"] });
+                setRele({ "1": reles["1"], "2": 0, "3": reles["3"], "4": reles["4"] });
                 break;
             case 3:
-                setRele({ "1": reles["1"], "2": reles["2"], "3": 1, "4": reles["4"] });
+                setRele({ "1": reles["1"], "2": reles["2"], "3": 0, "4": reles["4"] });
                 break;
             case 4:
-                setRele({ "1": reles["1"], "2": reles["2"], "3": reles["3"], "4": 1 });
+                setRele({ "1": reles["1"], "2": reles["2"], "3": reles["3"], "4": 0 });
                 break;
         }
-        clickOffRele();
+        // clickOffRele();
     }
     const clickOffRele = async () => {
 
@@ -146,7 +146,7 @@ export default function Esp32Provider({ children }) {
                 }
             })
         convertToBinary1(response.data.result.data)
-        console.log("estado rele:  ", response.data)
+        // console.log("estado rele:  ", response.data)
     }
 
     const printScreen = async () => {

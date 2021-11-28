@@ -14,6 +14,7 @@ export default function ForecastTab() {
 
     const { forecast, splitForecast, split } = useContext(WeatherContext)
 
+
     useEffect(async () => {
         split();
 
@@ -23,6 +24,12 @@ export default function ForecastTab() {
         console.log(key);
     }
 
+    function getRandomArbitrary(min, max) {
+        let num = Math.floor(Math.random() * (max - min) + min)
+        return num;
+    }
+    let random = getRandomArbitrary(2, 1500)
+
     return (
         <div>
 
@@ -30,22 +37,14 @@ export default function ForecastTab() {
                 {splitForecast && splitForecast.map((dayForecast, key) => {
                     return (
                         <>
-                            {console.log(splitForecast)}
-                            {/* {console.log("fecha: ", dayForecast[0].fecha.split(' ')[0])} */}
-                            <TabPane tab={dayForecast[0].Fecha.split(' ')[0]} key={key}>
+                            {/* {console.log("fecha: ", dayForecast[0].Fecha.split(' ')[0])} */}
+                            <TabPane key={key} tab={dayForecast[0].Fecha.split(' ')[0]} >
                                 <Dualaxes datos={dayForecast} x={'Hora'} y={'Probabilidad'} z={'Volumen'} />
-                                <AlertList dayForecast="dayForecast" />
-
+                                <AlertList dayForecast={dayForecast} random={random++} />
                             </TabPane>
                         </>)
                 })}
 
-                {/* <TabPane tab="Tab 2" key="2">
-                    Content of Tab Pane 2
-                </TabPane>
-                <TabPane tab="Tab 3" key="3">
-                    Content of Tab Pane 3
-                </TabPane> */}
 
             </Tabs>
 

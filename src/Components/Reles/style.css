@@ -1,0 +1,10 @@
+.panel-control{
+    display: flex;
+    justify-content: center;
+}
+.botoneria{
+    width: 20%;
+    display: flex;
+    justify-content: space-evenly;
+}
+

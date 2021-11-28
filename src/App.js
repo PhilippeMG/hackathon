@@ -1,30 +1,18 @@
 import 'antd/dist/antd.css'
 import './style.css'
+import logo from './logoOverFlow.png'; // Tell webpack this JS file uses this image
 
 
-// import { Row, Col } from 'antd';
 import Beep from "./Components/Beep";
-import Stats from "./Components/Stats";
 import Esp32Provider from './Provider/ESP32/provider';
 import WeatherProvider from './Provider/Weather/provider';
-import { Row, Col } from 'antd'
-import { Typography } from 'antd';
-import { useContext } from 'react/cjs/react.development';
-import { Tabs } from 'antd';
 import ForecastTab from './Components/ForecastTab';
-import { useEffect } from 'react';
-
 import EstadoRele from "./Components/Reles";
 
-const { TabPane } = Tabs;
 
-const { Title } = Typography;
 function App() {
 
-  // const { forecast, } = useContext(WeatherProvider);
-  function callback(key) {
-    console.log(key);
-  }
+
 
   return (
     <div className="container">
@@ -33,30 +21,22 @@ function App() {
 
 
           <div className="title">
-            <Title>
-              Hackaton-FACSA
-            </Title>
+            <img src={logo} width="150" height="150"></img>
+            <h1>
+              OverFlow
+            </h1>
           </div>
 
           <Beep />
+
+          <EstadoRele />
 
           <div className="tabs-graficas">
             <ForecastTab />
           </div>
 
-          <Row justify="center">
-            <Col
-              span={24}
-              style={{
-                backgroundColor: '#fff',
-                marginTop: '50px',
-                padding: '25px'
-              }}>
 
-              <EstadoRele />
-              <Stats />
-            </Col>
-          </Row>
+
 
 
         </WeatherProvider>

@@ -5,7 +5,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  
+  background: linear-gradient(0deg, rgba(255,255,255,1) 57%, rgba(47,151,242,1) 100%);
+  height: unset !important;
+  background-repeat: no-repeat;
 }
 
 code {
@@ -15,4 +17,19 @@ code {
 
 .tabs-graficas{
   margin: 5%;
+  margin: 1% 5%;
 }
+.tabs-graficas .ant-tabs{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.ant-tabs-nav,
+.ant-tabs-content-holder{
+  width: 75%;
+}
+
+
+

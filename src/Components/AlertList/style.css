@@ -1,0 +1,10 @@
+.ant-alert-with-description.ant-alert-no-icon {
+    margin: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.ant-btn.ant-btn-primary.ant-btn-sm{
+    height: 35px !important;
+
+}
