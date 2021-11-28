@@ -21,10 +21,10 @@ function App() {
 
 
           <div className="title">
-            <img src={logo} width="150" height="150"></img>
-            <h1>
+            <img src={logo} width="140" height="140"></img>
+            <p>
               OverFlow
-            </h1>
+            </p>
           </div>
 
           <Beep />
